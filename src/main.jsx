@@ -13,4 +13,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </BrowserRouter>,
 );
 
-console.log(basename);
+console.log("Current Basename", basename);

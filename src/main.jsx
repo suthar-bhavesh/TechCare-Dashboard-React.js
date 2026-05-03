@@ -4,7 +4,7 @@ import App from "./App";
 import "./index.css";
 
 const basename = window.location.hostname.includes("github.io")
-  ? "/TechCare-Dashboard-React.js"
+  ? "/TechCare-Dashboard-React.js/"
   : "/";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -51,7 +51,7 @@ const Navbar = () => {
 
           <NavLink
             className="flex items-center gap-2 text-sm font-medium"
-            to="/schedule"
+            to="/"
           >
             <Calendar size={18} />
             Schedule
@@ -59,7 +59,7 @@ const Navbar = () => {
 
           <NavLink
             className="flex items-center gap-2 text-sm font-medium"
-            to="/message"
+            to="/"
           >
             <MessageSquare size={18} />
             Message
@@ -67,7 +67,7 @@ const Navbar = () => {
 
           <NavLink
             className="flex items-center gap-2 text-sm font-medium"
-            to="/transactions"
+            to="/"
           >
             <CreditCard size={18} />
             Transactions

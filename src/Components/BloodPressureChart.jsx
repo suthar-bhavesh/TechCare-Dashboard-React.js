@@ -103,7 +103,7 @@ const BloodPressureChart = ({ data = [] }) => {
           </div>
         </div>
 
-        <div className="md:h-46.5 md:w-full h-59">
+        <div className="md:h-52 md:w-full h-59">
           <Line data={chartData} options={options} />
         </div>
       </div>

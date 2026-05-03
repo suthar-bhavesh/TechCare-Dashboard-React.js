@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .scrollbar-thin-custom {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgb(156 163 175) transparent; /* thumb track for Firefox */
+  }
+}

@@ -1,13 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import process from "node:process";
 
-// Sahi: Arrow function ka use kiya
 export default defineConfig(({ mode }) => {
-  console.log("Mera mode hai:", mode);
+  const isVercel = process.env.VERCEL === "true";
 
   return {
     plugins: [react(), tailwindcss()],
-    base: mode === "production" ? "/TechCare-Dashboard-React.js/" : "/",
+    base:
+      mode === "production" && !isVercel
+        ? "/TechCare-Dashboard-React.js/"
+        : "/",
   };
 });

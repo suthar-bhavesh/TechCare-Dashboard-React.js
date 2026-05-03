@@ -3,8 +3,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
+const basename =
+  import.meta.env.MODE === "production" &&
+  window.location.hostname.includes("github.io")
+    ? "/TechCare-Dashboard-React.js"
+    : "/";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename={import.meta.env.BASE_URL}>
+  <BrowserRouter basename={basename}>
     <App />
   </BrowserRouter>,
 );
+
+console.log(basename);

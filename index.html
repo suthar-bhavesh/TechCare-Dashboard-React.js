@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/Images/TestLogo.png"
+      type="image/x-icon"
+    />
     <title>Techcare-Dashboard</title>
   </head>
   <script type="text/javascript">
@@ -11,7 +16,7 @@
         let decoded = l.search
           .slice(1)
           .splice("&")
-          .map(function () {
+          .map(function (s) {
             return s.replace(/~and~/g, "&");
           })
           .join("?");

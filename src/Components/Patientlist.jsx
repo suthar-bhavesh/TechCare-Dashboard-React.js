@@ -1,6 +1,6 @@
 import { Ellipsis, Search } from "lucide-react";
 
-const PatientList = ({ Patients }) => {
+const PatientList = ({ Patients, setActivePatient, activePatient }) => {
   return (
     <div className="bg-white 2xl:w-91.75 2xl:h-263.5 w-full h-full mt-8 rounded-2xl overflow-hidden pb-6 flex flex-col">
       <div className="flex justify-between items-center px-7 py-6">
@@ -16,9 +16,12 @@ const PatientList = ({ Patients }) => {
         {Patients?.map((patient) => (
           <div
             key={patient.name}
-            className={`flex justify-between items-center px-5 mb-8 ${
-              patient.name === "Jessica Taylor" ? "bg-[#D8FCF7] py-4" : ""
-            } `}
+            onClick={() => setActivePatient(patient.name)}
+            className={`flex justify-between items-center px-5 mb-8 cursor-pointer ${
+              activePatient === patient.name
+                ? "bg-[#D8FCF7] py-4 transition-all"
+                : ""
+            }`}
           >
             <div className="flex items-center gap-3">
               <img

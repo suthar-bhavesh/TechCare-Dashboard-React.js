@@ -5,19 +5,26 @@ import HealthCard from "../Components/HealthCard";
 import PatientProfile from "../Components/Patientprofile";
 import DiagnosticTable from "../Components/DiagnosticTable";
 import LabResult from "../Components/LabResults";
+import { useState } from "react";
 const Dashboard = () => {
+  const [activePatient, setActivePatient] = useState("Jessica Taylor");
+
   const { data = [] } = useFetch(
     "https://fedskillstest.coalitiontechnologies.workers.dev",
   );
 
-  const patient = data?.find((p) => p.name === "Jessica Taylor");
+  const patient = data.find((p) => p.name === activePatient);
 
   const Months = patient?.diagnosis_history?.slice(0, 6).reverse();
 
   return (
     <>
       <div className="flex flex-col 2xl:flex-row md:gap-8">
-        <Patientlist Patients={data} />
+        <Patientlist
+          Patients={data}
+          activePatient={activePatient}
+          setActivePatient={setActivePatient}
+        />
 
         <div className="flex flex-col gap-8 mt-8">
           <div className="overflow-hidden flex md:flex-col flex-col bg-white rounded-2xl px-5 py-6 2xl:w-191.5 2xl:h-168.25 md:justify-between gap-5 w-full h-full">

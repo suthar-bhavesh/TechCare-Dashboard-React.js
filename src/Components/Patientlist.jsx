@@ -11,15 +11,15 @@ const PatientList = ({ Patients, setActivePatient, activePatient }) => {
         className="overflow-y-auto flex flex-col overflow-hidden h-237 [&::-webkit-scrollbar]:w-1.5
   [&::-webkit-scrollbar-track]:bg-gray-200 
   [&::-webkit-scrollbar-thumb]:bg-black 
-  [&::-webkit-scrollbar-thumb]:rounded-full"
+  [&::-webkit-scrollbar-thumb]:rounded-full py-4"
       >
         {Patients?.map((patient) => (
           <div
             key={patient.name}
             onClick={() => setActivePatient(patient.name)}
-            className={`flex justify-between items-center px-5 mb-8 cursor-pointer ${
+            className={`flex justify-between items-center px-5 py-4 cursor-pointer hover:bg-gray-50 hover:transition-all ${
               activePatient === patient.name
-                ? "bg-[#D8FCF7] py-4 transition-all"
+                ? "bg-[#D8FCF7] transition-all"
                 : ""
             }`}
           >
